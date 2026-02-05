@@ -25,5 +25,4 @@ author_profile: true
 - 武侠与推理小说
 
 欢迎同行、朋友与我交流合作！  
-📧 联系方式：[liwbeijing@gmail.com](mailto:liwbeijing@gmail.com)
-
+联系方式：[liwbeijing@gmail.com](mailto:liwbeijing@gmail.com)

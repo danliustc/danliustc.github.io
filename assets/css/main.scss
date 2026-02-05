@@ -1,11 +1,13 @@
 ---
 ---
 
-/* 1. 字体族统一 */
-$mono-family: "Fira Code", "Source Code Pro", "SF Mono",
-              "Monaco", "Consolas", monospace;
-$global-font-family: $mono-family;
-$header-font-family: $mono-family;
+/* 1. 字体族统一（系统无衬线） */
+$sans-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+              "Helvetica Neue", Helvetica, Arial, "Noto Sans",
+              "Liberation Sans", "PingFang SC", "Hiragino Sans GB",
+              "Microsoft YaHei", sans-serif;
+$global-font-family: $sans-family;
+$header-font-family: $sans-family;
 
 /* 2. 先导入主题，后面再覆写局部 */
 @import "minimal-mistakes";
@@ -18,7 +20,7 @@ html { font-size: 100%; }                 // 16 px
 
 /* 4. 正文与行距 */
 body {
-  font-family: $mono-family;
+  font-family: $sans-family;
   line-height: 1.7;
   margin: 0;
 }
@@ -31,5 +33,40 @@ h4 { font-size: 1.25rem; margin-top: 1rem;  }
 
 /* 6. 如需兜底，可保留轻量级通配覆盖 */
 html, body, p, li, a {
-  font-family: $mono-family;
+  font-family: $sans-family;
+}
+
+/* 7. 主页文章列表：仅显示小号标题，隐藏摘要 */
+.layout--home {
+  .archive__item-excerpt {
+    display: none;
+  }
+
+  .archive__item-title {
+    font-size: 1.0rem;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .archive__item-title a {
+    text-decoration: none;
+    box-shadow: none;
+    background-image: none;
+    color: inherit;
+    display: block;
+    max-width: 100%;
+  }
+}
+
+/* 8. 全站文本统一（避免局部组件使用不同字体） */
+h1, h2, h3, h4, h5, h6,
+.site-title, .site-subtitle,
+.page__title, .archive__item-title,
+.site-nav, .greedy-nav,
+.author__name, .author__bio,
+.page__content, .page__meta, .page__footer,
+.pagination, .toc, .breadcrumb,
+.notice, .callout, .search__search-input {
+  font-family: $sans-family;
 }
