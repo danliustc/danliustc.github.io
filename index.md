@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "PyFun Notes"
+title: ""
 subtitle: "A weblog about AI, chips and product thinking."
 author_profile: false
 ---

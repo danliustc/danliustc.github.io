@@ -2,5 +2,5 @@
 main:
   - title: "关于我"
     url: /about/
-  - title: "订阅"
+  - title: "RSS"
     url: /feed.xml
