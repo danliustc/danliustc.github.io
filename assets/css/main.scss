@@ -1,72 +1,178 @@
 ---
 ---
 
-/* 1. 字体族统一（系统无衬线） */
-$sans-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-              "Helvetica Neue", Helvetica, Arial, "Noto Sans",
-              "Liberation Sans", "PingFang SC", "Hiragino Sans GB",
-              "Microsoft YaHei", sans-serif;
-$global-font-family: $sans-family;
+/* Typography and palette inspired by text-first weblogs. */
+$sans-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial,
+  "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+$serif-family: "Iowan Old Style", "Palatino Linotype", "Times New Roman", Georgia, serif;
+$global-font-family: $serif-family;
 $header-font-family: $sans-family;
 
-/* 2. 先导入主题，后面再覆写局部 */
 @import "minimal-mistakes";
 
-/* 3. 基准字号：16 px → 18 px（≥768 px）*/
-html { font-size: 100%; }                 // 16 px
-@media (min-width: 768px) {
-  html { font-size: 112.5%; }             // 18 px
+html {
+  font-size: 100%;
 }
 
-/* 4. 正文与行距 */
+@media (min-width: 768px) {
+  html {
+    font-size: 112.5%;
+  }
+}
+
 body {
-  font-family: $sans-family;
-  line-height: 1.7;
+  background: #ffffff;
+  color: #222222;
+  font-family: $serif-family;
+  line-height: 1.72;
   margin: 0;
 }
 
-/* 5. 标题比例阶梯 */
-h1 { font-size: 2.25rem; margin-top: 2.5rem; }
-h2 { font-size: 1.75rem; margin-top: 2rem;  }
-h3 { font-size: 1.50rem; margin-top: 1.5rem; }
-h4 { font-size: 1.25rem; margin-top: 1rem;  }
+p,
+li,
+.page__content p {
+  margin-bottom: 1rem;
+}
 
-/* 6. 如需兜底，可保留轻量级通配覆盖 */
-html, body, p, li, a {
+a {
+  color: #0b5ea8;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover,
+a:focus {
+  color: #003f78;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.site-title,
+.page__title,
+.archive__item-title,
+.greedy-nav a {
   font-family: $sans-family;
 }
 
-/* 7. 主页文章列表：仅显示小号标题，隐藏摘要 */
-.layout--home {
-  .archive__item-excerpt {
-    display: none;
-  }
+h1 {
+  font-size: 2rem;
+  margin-top: 1.6rem;
+}
 
-  .archive__item-title {
-    font-size: 1.0rem;
-    line-height: 1.4;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
+h2 {
+  font-size: 1.45rem;
+  margin-top: 1.6rem;
+}
 
-  .archive__item-title a {
-    text-decoration: none;
-    box-shadow: none;
-    background-image: none;
-    color: inherit;
-    display: block;
+h3 {
+  font-size: 1.2rem;
+}
+
+.masthead {
+  border-bottom: 0;
+}
+
+.masthead__inner-wrap {
+  border-bottom: 1px solid #d9d9d9;
+  max-width: 760px;
+  padding: 0.8rem 0;
+}
+
+.site-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.greedy-nav {
+  background: transparent;
+}
+
+.greedy-nav .visible-links a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.greedy-nav .visible-links a:hover {
+  text-decoration: underline;
+}
+
+.sidebar {
+  display: none;
+}
+
+.archive,
+.page {
+  float: none;
+  margin-right: auto;
+  max-width: 760px;
+  padding-right: 0;
+  width: 100%;
+}
+
+.layout--home .initial-content > p {
+  color: #444444;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.layout--home .archive__item {
+  margin-bottom: 1.1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dotted #e4e4e4;
+}
+
+.layout--home .archive__item:last-child {
+  border-bottom: 0;
+}
+
+.layout--home .archive__item-title {
+  font-size: 1.12rem;
+  line-height: 1.35;
+  margin: 0.2rem 0;
+}
+
+.layout--home .archive__item-title a {
+  color: #0b5ea8;
+  text-decoration: underline;
+}
+
+.layout--home .archive__item-excerpt p {
+  color: #4a4a4a;
+  font-size: 0.96rem;
+  margin-top: 0.35rem;
+}
+
+.page__meta,
+.archive__item .page__meta,
+.archive__item-teaser + .archive__item-body .page__meta {
+  color: #6a6a6a;
+  font-family: $sans-family;
+  font-size: 0.8rem;
+}
+
+.page__content {
+  font-size: 1.03rem;
+}
+
+.page__footer,
+.page__share,
+.author__avatar,
+.author__content {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .masthead__inner-wrap,
+  .archive,
+  .page {
     max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
-}
-
-/* 8. 全站文本统一（避免局部组件使用不同字体） */
-h1, h2, h3, h4, h5, h6,
-.site-title, .site-subtitle,
-.page__title, .archive__item-title,
-.site-nav, .greedy-nav,
-.author__name, .author__bio,
-.page__content, .page__meta, .page__footer,
-.pagination, .toc, .breadcrumb,
-.notice, .callout, .search__search-input {
-  font-family: $sans-family;
 }

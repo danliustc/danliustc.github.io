@@ -55,7 +55,7 @@ defaults:
     values:
       layout: "single"
       author: "Dan"
-      author_profile: true
+      author_profile: false
       read_time: false
       comments: false
-      share: true
+      share: false
