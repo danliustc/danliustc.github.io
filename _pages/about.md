@@ -3,7 +3,7 @@ layout: single
 title: "关于我"
 permalink: /about/
 author: "Dan"
-author_profile: true
+author_profile: false
 ---
 
 你好，我是 Dan（Li Wei），一名专注于 AI 芯片与推理加速的产品项目经理与工程师，现居北京。

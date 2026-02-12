@@ -1,5 +1,5 @@
-title: "Wei's notebook"
-description: "feedId:170421468079292416+userId:125808254043183104"
+title: "Wei's Notebook"
+description: "记录技术、产品与日常思考"
 baseurl: "" 
 url: "https://pycat.site/"
 locale: "zh-CN"
@@ -42,6 +42,9 @@ markdown: kramdown
 highlighter: rouge
 
 minimal_mistakes_skin: "default"
+
+search: true
+search_full_content: true
 
 include:
   - "_pages"
