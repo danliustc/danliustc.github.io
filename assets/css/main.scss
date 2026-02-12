@@ -80,6 +80,8 @@ h3 {
 .masthead__inner-wrap {
   border-bottom: 1px solid #e6e6e6;
   max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 1.2rem 0;
 }
 
@@ -128,9 +130,19 @@ h3 {
   display: none;
 }
 
+.initial-content,
+.search-content {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .archive,
 .page {
   float: none;
+  margin-left: auto;
   margin-right: auto;
   max-width: 780px;
   padding-right: 0;
